@@ -1,0 +1,149 @@
+/* @import url('assets/fonts/'); */
+
+:root {
+    --accent: hsla(259, 100%, 65%, 1);
+    --accent-100: hsla(259, 100%, 65%, .5);
+    --denger: hsl(0, 100%, 67%);
+
+    --primary-white: hsl(0, 0%, 100%);
+    --gray-clr-100: hsl(0, 0%, 94%);
+    --gray-clr-200: hsl(0, 0%, 86%);
+    --gray-clr-300: hsl(0, 1%, 44%);
+    --text-clr: hsl(0, 0%, 8%);
+
+    --font-family:'Poppins', sans-serif;;
+    --fot-size: 32px;
+}
+
+/* html {
+    color-scheme: light dark;
+} */
+@font-face {
+    font-family: var(--font-family);
+    src: url('assets/fonts/Poppins-Regular.ttf');
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-style: italic;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray-clr-100);
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+main {
+    background-color: var(--primary-white);
+    border-radius: 1em;
+    border-bottom-right-radius: 5em;
+    padding: 2em 1.8em;
+    width: min(90vw, 45em);
+}
+.calculate {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    border-bottom: 2px solid var(--gray-clr-100);
+    padding-block-end: 3.5em;
+    margin-bottom: 4em;
+    position: relative;
+}
+.eyebrow {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: .9em;
+    letter-spacing: .2em;
+    color: var(--gray-clr-300);
+}
+
+input {
+    font-style: normal;
+    font-weight: 700;
+    width: clamp(5em, 15vw, 10em);
+    padding: .7em 1em;
+    border: 2px solid var(--gray-clr-100);
+    outline: none;
+    border-radius: 7px;
+    margin-top: .3em;
+    font-size: 1.2rem;
+    color: var(--text-clr);
+}
+/* Remove the arrow in the input field */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* For Firefox */
+input {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    border: 2px solid var(--accent);
+}
+.submit-btn {
+    background-color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: .2em;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -2.5em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.submit-btn:hover {
+    background-color: var(--accent-100);
+}
+.submit-btn:active {
+    background-color: var(--text-clr);
+}
+img {
+    width: 2.4em;
+}
+
+.display {
+    font-size: clamp(32px, 4vw, 3.5em);
+}
+
+h2 {
+    font-weight: 800;
+    color: var(--text-clr);
+}
+
+span {
+    color: var(--accent);
+}
+
+.err-msg {
+    margin-top: .5em;
+    visibility: hidden;
+    font-size: clamp(10px, 2.2vw, 16px);
+    color: var(--denger);
+    /* text-align: center;    */
+    font-weight: 400;
+}
+
+@media screen and (min-width: 788px) {
+    .submit-btn {
+        position: absolute;
+        left: 95%;
+    }
+    
+}
